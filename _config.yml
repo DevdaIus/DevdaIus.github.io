@@ -8,3 +8,14 @@ url: https://DevdaIus.github.io
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
+
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: purple
+
+color_scheme: dark
+

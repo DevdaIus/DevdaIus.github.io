@@ -62,4 +62,6 @@ bundle exec jekyll serve --livereload  //--livereload 명령어는저장할때�
 ![local](image-1.png)
 <br>
 둘 중 하나로 들어가서 작성하고 있는 Markdown 파일을 확인할 수 있습니다.  
-**(주의 : 로컬에서 보여주고있는것이기 때문에 작성을 완료했다면 commit & push까지 해야 실제 업로드가 완료됩니다)**
+
+{: .warning}
+로컬 환경이기때문에 작성을 완료했다면 **commit & push**까지 해야 실제 업로드가 완료됩니다!

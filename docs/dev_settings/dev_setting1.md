@@ -1,10 +1,13 @@
 ---
 layout: default
 title: 개발환경 세팅하기 - 1
+parent: DevOps
 nav_order: 2
+has_children: false
 ---
 
 > 작성일: 2024-01-29  
+> Written By: [ClayCat](https://github.com/claycat)
 
 > Devdalus 프로젝트의 개발환경 세팅 소개문서입니다
 

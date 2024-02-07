@@ -2,7 +2,7 @@
 layout: default
 title: 우당탕탕 JPA
 parent: Database
-has_children: true
+has_children: false
 ---
 
 > 작성일: 2024-02-07  

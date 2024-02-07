@@ -2,7 +2,7 @@
 layout: default
 title: 1/18 정기 미팅
 parent: Meetings
-has_children: true
+has_children: false
 ---
 
 > 작성일: 2024-01-15  

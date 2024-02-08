@@ -9,7 +9,7 @@
     "url" : "https://virtserver.swaggerhub.com/CATENARYWKD/Devdalus/1.0.0",
     "description" : "SwaggerHub API Auto Mocking"
   }, {
-    "url" : "https://localhost:8000/api/1.0.0",
+    "url" : "https://localhost:8000/api/1.0",
     "description" : "Devdalus API docs"
   } ],
   "paths" : {

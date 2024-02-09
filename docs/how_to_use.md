@@ -5,7 +5,9 @@ nav_order: 1
 ---
 
 # **위키 포스팅 작성법**
-작성일: 2024-01-31
+> 작성일: 2024-01-31  
+> Written By: [ClayCat](https://github.com/claycat)
+
 
 Devdalus github blog는 [just-the-docs](https://github.com/just-the-docs/just-the-docs) 테마를 사용하고 있습니다.  
 <br>

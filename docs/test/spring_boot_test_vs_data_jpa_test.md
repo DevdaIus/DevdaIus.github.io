@@ -1,7 +1,7 @@
 ---
 layout: default
 title: '@SpringBootTest vs @DataJpaTest'
-parent: Database
+parent: Test
 has_children: false
 ---
 

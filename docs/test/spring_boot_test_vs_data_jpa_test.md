@@ -45,7 +45,7 @@ auto-configuration이란 Spring에서는 수동으로 해주어야 하는 설정
 이러한 설정은 `@AutoConfigureTestDatabase`로 재정의 가능하다.
 
 # 어떤 것을 사용해야할까?
-`@SpringBootTest` + `@AutoConfigureTestDatabase` + `@Transactional`을 조합해서 사용하면 `@DataJpaTest`와 동일하게 동작하게 할 수 있다.
+`@SpringBootTest` + `@AutoConfigureTestDatabase` + `@Transactional`을 조합해서 사용하면 `@DataJpaTest`처럼 embedded db와 transaction을 사용할 수 있다.
 
 그렇다면 어떤 기준으로 전자를 선택할지 후자를 선택할지 결정해야 할까? \
 `@DataJpaTest`을 사용하는 경우는 ApplicationContext가 필요없는 경우가 될 것이다. 즉, Repository Test와 같은 Unit 테스트에 알맞은 annotation이라 할 수 있다.

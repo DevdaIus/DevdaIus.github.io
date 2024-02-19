@@ -414,8 +414,7 @@
             }
           },
           "direction" : {
-            "type" : "string",
-            "enum" : [ "LEFT", "RIGHT", "CENTER" ]
+            "$ref" : "#/components/schemas/NodeDirection"
           }
         }
       },
@@ -433,6 +432,10 @@
             }
           }
         }
+      },
+      "NodeDirection" : {
+        "type" : "string",
+        "enum" : [ "LEFT", "RIGHT", "CENTER" ]
       },
       "inline_response_200" : {
         "type" : "object",
@@ -466,8 +469,7 @@
             "format" : "uuid"
           },
           "direction" : {
-            "type" : "string",
-            "enum" : [ "LEFT", "RIGHT" ]
+            "$ref" : "#/components/schemas/NodeDirection"
           }
         }
       },

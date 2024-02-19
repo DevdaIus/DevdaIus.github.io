@@ -1,0 +1,508 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Devdalus",
+    "description" : "The API for the Devdalus Project",
+    "version" : "1.0"
+  },
+  "servers" : [ {
+    "url" : "https://localhost:8000/api/1.0",
+    "description" : "Devdalus API docs"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/CATENARYWKD/Devdalus/1.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : {
+    "/board" : {
+      "post" : {
+        "tags" : [ "Board" ],
+        "description" : "create new board",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Board"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "response",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NewBoardResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/board/{boardId}" : {
+      "get" : {
+        "tags" : [ "Board" ],
+        "description" : "returns board with specific boardId",
+        "parameters" : [ {
+          "name" : "boardId",
+          "in" : "path",
+          "description" : "id of board",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "root node id of board",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Board" ],
+        "description" : "update board with boardId",
+        "parameters" : [ {
+          "name" : "boardId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successfully updated board",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BaseOkResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "Board" ],
+        "description" : "update board with boardId",
+        "parameters" : [ {
+          "name" : "boardId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successfully updated board",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BaseOkResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/node/{nodeId}" : {
+      "get" : {
+        "tags" : [ "Node" ],
+        "parameters" : [ {
+          "name" : "nodeId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get node by nodeId and children",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NodeArray"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Node" ],
+        "description" : "Delete Node",
+        "parameters" : [ {
+          "name" : "nodeId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted node"
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "Node" ],
+        "description" : "Patch Node",
+        "parameters" : [ {
+          "name" : "nodeId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/node_nodeId_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successfully updated node"
+          }
+        }
+      }
+    },
+    "/node/{nodeId}/detail" : {
+      "get" : {
+        "tags" : [ "Node" ],
+        "parameters" : [ {
+          "name" : "nodeId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Get node detail",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NodeDetail"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/node" : {
+      "post" : {
+        "tags" : [ "Node" ],
+        "description" : "create Node",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/node_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Create Node",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_201"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/answer" : {
+      "post" : {
+        "tags" : [ "Answer" ],
+        "description" : "create new answer",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/answer_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "successfully created new answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BaseOkResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/answer/{answerId}" : {
+      "get" : {
+        "tags" : [ "Answer" ],
+        "description" : "get answer content",
+        "parameters" : [ {
+          "name" : "answerId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "get answer by answerId",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/node_nodeId_body"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Answer" ],
+        "description" : "Delete answer",
+        "parameters" : [ {
+          "name" : "answerId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successfully deleted answer"
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "Answer" ],
+        "description" : "update answer",
+        "parameters" : [ {
+          "name" : "answerId",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/answer_answerId_body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "successfully updated new answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/BaseOkResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Board" : {
+        "type" : "object",
+        "properties" : {
+          "subject" : {
+            "type" : "string"
+          }
+        }
+      },
+      "NewBoardResponse" : {
+        "type" : "object",
+        "properties" : {
+          "boardId" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
+      "BaseOkResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "default" : 200
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "NodeArray" : {
+        "type" : "object",
+        "properties" : {
+          "summary" : {
+            "type" : "string"
+          },
+          "child_node_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "uuid"
+            }
+          },
+          "direction" : {
+            "type" : "string",
+            "enum" : [ "LEFT", "RIGHT", "CENTER" ]
+          }
+        }
+      },
+      "NodeDetail" : {
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
+          },
+          "answerIds" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "uuid"
+            }
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "rootNodeId" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }
+      },
+      "node_nodeId_body" : {
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
+          }
+        }
+      },
+      "node_body" : {
+        "type" : "object",
+        "properties" : {
+          "parentId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "content" : {
+            "type" : "string"
+          },
+          "boardId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "direction" : {
+            "type" : "string",
+            "enum" : [ "LEFT", "RIGHT" ]
+          }
+        }
+      },
+      "inline_response_201" : {
+        "type" : "object",
+        "properties" : {
+          "nodeId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "summary" : {
+            "type" : "string"
+          }
+        }
+      },
+      "answer_body" : {
+        "type" : "object",
+        "properties" : {
+          "nodeId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "content" : {
+            "type" : "string"
+          }
+        }
+      },
+      "answer_answerId_body" : {
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
     "url" : "https://virtserver.swaggerhub.com/CATENARYWKD/Devdalus/1.0.0",
     "description" : "SwaggerHub API Auto Mocking"
   }, {
-    "url" : "https://localhost:8000/api/1.0",
+    "url" : "https://localhost:8000/api/v1",
     "description" : "Devdalus API docs"
   } ],
   "paths" : {
@@ -110,6 +110,15 @@
             "format" : "uuid"
           }
         } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/board_boardId_body"
+              }
+            }
+          }
+        },
         "responses" : {
           "200" : {
             "description" : "successfully updated board",
@@ -166,7 +175,7 @@
           }
         } ],
         "responses" : {
-          "200" : {
+          "204" : {
             "description" : "Successfully deleted node"
           }
         }
@@ -195,7 +204,7 @@
           }
         },
         "responses" : {
-          "200" : {
+          "204" : {
             "description" : "Successfully updated node"
           }
         }
@@ -271,14 +280,7 @@
         },
         "responses" : {
           "201" : {
-            "description" : "successfully created new answer",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BaseOkResponse"
-                }
-              }
-            }
+            "description" : "successfully created new answer"
           }
         }
       }
@@ -326,7 +328,7 @@
           }
         } ],
         "responses" : {
-          "200" : {
+          "204" : {
             "description" : "Successfully deleted answer"
           }
         }
@@ -355,15 +357,8 @@
           }
         },
         "responses" : {
-          "201" : {
-            "description" : "successfully updated new answer",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/BaseOkResponse"
-                }
-              }
-            }
+          "204" : {
+            "description" : "successfully updated new answer"
           }
         }
       }
@@ -434,9 +429,21 @@
       "inline_response_200" : {
         "type" : "object",
         "properties" : {
+          "code" : {
+            "type" : "integer",
+            "default" : 200
+          },
           "rootNodeId" : {
             "type" : "string",
             "format" : "uuid"
+          }
+        }
+      },
+      "board_boardId_body" : {
+        "type" : "object",
+        "properties" : {
+          "content" : {
+            "type" : "string"
           }
         }
       },

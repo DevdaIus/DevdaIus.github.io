@@ -280,7 +280,14 @@
         },
         "responses" : {
           "201" : {
-            "description" : "successfully created new answer"
+            "description" : "successfully created new answer",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_201_1"
+                }
+              }
+            }
           }
         }
       }
@@ -496,6 +503,15 @@
           },
           "content" : {
             "type" : "string"
+          }
+        }
+      },
+      "inline_response_201_1" : {
+        "type" : "object",
+        "properties" : {
+          "answerId" : {
+            "type" : "string",
+            "format" : "uuid"
           }
         }
       },

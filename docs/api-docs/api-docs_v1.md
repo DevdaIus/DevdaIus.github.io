@@ -19,7 +19,9 @@ SwaggerHub를 사용하여 API 문서를 작성하였습니다.
 변경사항이 있을경우 꼭 아래 패치노트에 표기해주세요!
 
 ### 패치노트
+* 24/02/20
+  * POST /answer response 변경  
 * 24/02/19
-    * NODE_DIRECTION에 CENTER 추가
-    * Node, Answer patch, delete response status code 변경
+  * NODE_DIRECTION에 CENTER 추가
+  * Node, Answer patch, delete response status code 변경
 * 24/02/08 1.0v 작성

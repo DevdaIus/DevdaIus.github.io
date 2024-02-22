@@ -23,7 +23,7 @@ has_children: false
 Q. board patch는 현재 기획으로는 불가능한 것 아닌가?  
 A. 주제를 변경하는 기능이 없는 것으로 알고 있어서 불가능  
   
-Q. node patch의 의미는 무엇인가?
+Q. node patch의 의미는 무엇인가?  
 A. 질문을 수정하는 기능, request body의 content가 모호한 것 같아서 명시적인 question으로 변경 
 
 ## 다음주 스프린트까지 목표

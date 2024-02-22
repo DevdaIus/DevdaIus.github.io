@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2/8 정기 미팅
+title: 2/22 정기 미팅
 parent: Meetings
 has_children: false
 ---
